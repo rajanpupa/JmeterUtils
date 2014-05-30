@@ -1,0 +1,50 @@
+<html>
+<head>Javascript Training</head>
+<body>
+<script type = "text/javascript">
+function ss()
+{
+alert("Thank you!")
+}
+
+function Box(color)
+{	
+	this.color = color;
+	this.getColor = function() {return this.color;}
+	}
+
+function CallBox(){	
+	var blueBox=new Box("blue");
+	alert(blueBox.getColor());
+	alert(blueBox.constructor);
+	}
+	
+function Person(){
+	this.age = 0;
+	this.name = "";
+	
+	this.getAge = function(age1){
+		this.age1;
+	};
+	
+	this.getName = function(name1){
+		this.name = name1;
+	};
+	
+	this.showInfo = fuinction(){
+		alert("Age of "+this.name+" is "+this.age);
+	};
+}
+
+function getPersonInfo(){
+var objectPerson = new Person();
+objPerson.getAge(12);
+objPerson.getName("Dijup");
+alert(objPerson.showInfo());
+}
+</script>
+<form>
+<input type="button" value="Click here" onclick="getPersonInfo()">
+</form>
+</body>
+</html>

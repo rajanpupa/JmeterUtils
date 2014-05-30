@@ -1,0 +1,180 @@
+<html>
+<head>
+<script type ="text/javascript">
+/*
+function Person(){
+	this.age = 0;
+	this.name = "";
+	
+	//function getAge (age1)
+	//{
+	//	this.age = age1;
+	//};
+	this.getAge = function(age1){
+		this.age = age1;
+	};
+	
+	this.getName = function(name1){
+		this.name = name1;
+	};
+	
+	this.showInfo = function(){
+		alert("Age of "+this.name+" is "+this.age);
+	};
+}
+
+
+//Object instance 'objPerson'
+//var objPerson = new Person();
+//objPerson.getAge(12);
+//objPerson.getName("Dijup");
+//objPerson.showInfo();
+
+function sayHello(name) {
+	this.name = name;
+	this.talk = function() {
+			alert( this.name + " says hello!" )
+			}
+		}
+//cat1 = new sayHello("felix")
+//cat1.talk() //alerts "felix says meeow!"
+//sayHello.prototype.changeName = function(name) {
+//		this.name = name;
+//		}
+//firstCat = new sayHello("pursur")
+//firstCat = new sayHello("Bill")
+//firstCat.changeName("Bill")
+//firstCat.talk() //alerts "Bill says meeow!"
+
+
+var Customer = function(id){
+	var totalSpend = 0;
+	
+	function isSpecial(){
+		return totalSpend > 100;
+	}
+	return {
+				placeOrder: function(order){
+					totalSpend += order;
+					},
+					getReward: function(){
+						if(isSpecial()){
+							return "Special Customer Coupon!";
+						}
+						else{
+							return "Nothing Today";
+						}},
+						toString: function(){
+							return "Customer #"+id;
+						}
+					};
+				};
+var TestCustomer = new Customer(11);
+TestCustomer.placeOrder(99);
+alert(TestCustomer.getReward());
+alert(TestCustomer.toString());
+//TestCustomer.isSpecial();
+*/
+/*
+function Apple(type){
+    this.type =type;
+    this.color ="red";
+    this.getInfo = getAppleInfo;
+    }
+    
+    //Method defined externally
+    function getAppleInfo(name){
+        return this.color + ' ' + this.type + ' ' + name;
+    }
+	
+	//Method defined externally
+    function getAppleInfo(name,type){
+        return this.color + ' ' + type + ' ' + name;
+    }
+    
+    var apple = new Apple('macintosh');
+    //apple.color = "reddish";
+	alert(apple.getInfo('orange','intel'));
+    alert(apple.getInfo('orange'));
+*/
+/*
+function Apple(type){
+    this.type =type;
+    this.color ="red";
+    }
+	
+	Apple.prototype.getInfo = function(){
+		return this.color + ' ' + this.type + ' apple';
+	};
+	
+	var apple = new Apple('macintosh');
+    apple.color = "reddish";
+	alert(apple.getInfo());
+	alert(apple.prototype);
+	*/
+/*
+	var apple = new function(){
+	 this.type = "macintosh";
+	 this.color = "red";
+	 this.getInfo = function (){
+		return this.color + ' ' + this.type + ' apple';
+	 }
+	}
+	var orange = apple;
+	alert(orange.getInfo());	
+	apple.color = "reddish";
+	alert(apple.getInfo());
+*/
+/*
+var apple = {
+	type: "macintosh",
+	color: "red",
+	getInfo: function(){
+		return this.color + ' ' + this.type + ' apple';
+	}
+	};
+	
+	apple.color = "reddish";
+	alert(apple.getInfo());
+*/
+function UserProfile(username,password){
+	this.username = username;
+	this.password = password;
+	this.authenticate = function(){
+		if(this.username == "surendra" && this.password == "maharjan"){
+			return true;
+	}
+	return false;
+	}
+	};
+	
+	var up = new UserProfile("surendra","maharjan");
+	var result = up.authenticate();
+	//alert(result);
+	
+// Child class
+function EmployeeProfile(username, password, employeeID){
+	this.username = username;
+	this.password = password;
+	this.employeeID = employeeID;
+	}
+	EmployeeProfile.prototype = new UserProfile();
+	var ep = new EmployeeProfile("surendra", "maharjan", 1);
+	var result2 = ep.authenticate(); 
+	//alert(result2);
+	// Method Overriding
+	EmployeeProfile.prototype.authenticate = function(){
+		if(this.employeeID == 123 && this.username == "surendra" && this.password == 'maharjan')
+		{
+			return true;
+		}
+		return false;
+		}
+		var ep = new EmployeeProfile('surendra', 'maharjan');
+		var result3 = ep.authenticate();
+		alert(result3);
+</script>
+</head>
+<body>
+</body>
+</html>
